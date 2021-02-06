@@ -62,9 +62,9 @@ function App() {
       <div className="navbar navbar-expand-md navbar-light">
           <div className="container-fluid w-75 p-3 justify-content-between">
               <a className="navbar-brand" href="">
-                  <img className="col-9" src="./assets/vodafone_logo.svg" alt=""></img>
+                  <img className="col-md-9 col-sm-12" src="./assets/vodafone_logo.svg" alt=""></img>
               </a>
-              <input className="col-3" type="text" placeholder="Search" onChange={(e)=> setQuery(e.target.value)}/>
+              <input className="col-md-3 col-sm-12" type="text" placeholder="Search" onChange={(e)=> setQuery(e.target.value)}/>
           </div>
       </div>
 

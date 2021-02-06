@@ -27,6 +27,7 @@
   border-radius: 15px; 
   font-size: 8px; 
   text-align: center; 
+  z-index: 5;
 } 
 .btn-circle.btn-md { 
   font-size: 2rem;
@@ -40,6 +41,7 @@
   border-radius: 25px; 
   font-size: 10px; 
   text-align: center; 
+  z-index: 5;
 } 
 .btn-circle.btn-xl { 
   font-size: 2rem;
@@ -52,6 +54,7 @@
   padding: 10px 16px; 
   border-radius: 35px; 
   text-align: center; 
+  z-index: 5;
 } 
 
 .my-h1
