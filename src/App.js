@@ -79,7 +79,7 @@ function App() {
                       <div className="row text-center justify-content-center">
                           {
                             letters.map(function(letter,index){
-                              return <h2 className={`my-h2 col-1 m-2 ${settingActive(index,active)}`} onClick={function(){
+                              return <h2 key={index} className={`my-h2 col-1 m-2 ${settingActive(index,active)}`} onClick={function(){
                                 setActive(index)
                                 filtering(letter)
                               }
