@@ -1,12 +1,10 @@
-import React,{useState,useEffect} from 'react';
-import '../App.css';
-
+import React,{useState} from 'react';
 
 function FormEdit(props)
 {
 
     const [inputName,setInputName] = useState("")
-    const [inputEmail,setInputEmail] = useState("")
+    const [inputEmail,setInputEmail] = useState("")                                        //States for inputs 
     const [inputPhone,setInputPhone] = useState("")
 
 
@@ -14,7 +12,7 @@ function FormEdit(props)
     {
     const object = {
       id: index,
-      name: inputName,
+      name: inputName,                                                          //Creating Object in given data format
       email: inputEmail,
       phoneNumber: inputPhone
     }
@@ -26,25 +24,25 @@ function FormEdit(props)
     {
         e.preventDefault()
 
-        const newContacts = [settingObject(Math.floor(Math.random()*10000)),...props.table]
+        const newContacts = [settingObject(Math.floor(Math.random()*10000)),...props.table]                      //Generate random ID from 0-100000 for new added contact. Then create new array with old contacts and added contact
         
         props.setTable(newContacts)                 //set the data right after fetching json
         props.setFilTable(newContacts)              //set the data that visualized
 
         setInputName("")
-        setInputEmail("")
+        setInputEmail("")                                   //clearing input areas 
         setInputPhone("")
     }
 
     function removing(e)
     {
         props.setTable(props.table.filter((contact) => contact != e))
-        props.setFilTable(props.table.filter((contact) => contact != e))
+        props.setFilTable(props.table.filter((contact) => contact != e))                //Deleting function and update the data states 
     }
 
 
     return(
-    <form className="my-form bg-light" onSubmit={(e) => submitHandling(e)}>
+    <form className="my-form shadow bg-light" onSubmit={(e) => submitHandling(e)}>
           <div className="form-btn back-btn bg-danger" onClick={()=>props.aniClose()}>
             <span>back</span>
           </div>

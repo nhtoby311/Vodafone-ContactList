@@ -1,48 +1,9 @@
-.App {
-  text-align: center;
+.main
+{
+  opacity: 1;                                 /*Use for animation*/
 }
 
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-
-.btn-circle.btn-sm { 
-  font-size: 2rem;
-  font-weight: bold;
-  position: fixed;
-  right:50px;
-  bottom: 50px;
-  width: 30px; 
-  height: 30px; 
-  padding: 6px 0px; 
-  border-radius: 15px; 
-  font-size: 8px; 
-  text-align: center; 
-  z-index: 5;
-} 
-.btn-circle.btn-md { 
-  font-size: 2rem;
-  font-weight: bold;
-  position: fixed;
-  right:50px;
-  bottom: 50px;
-  width: 50px; 
-  height: 50px; 
-  padding: 7px 10px; 
-  border-radius: 25px; 
-  font-size: 10px; 
-  text-align: center; 
-  z-index: 5;
-} 
 .btn-circle.btn-xl { 
   font-size: 2rem;
   font-weight: bold;
@@ -82,15 +43,15 @@
 }
 
 
-/* form */
+/* Custom form css */
 .my-form
 {
   position: fixed;
   right:0;
   bottom: 0;
-  width: 40vw;
-  height: 50vh;
-  transform: translateX(45vw);
+  width: 50vw;
+  height: 60vh;
+  transform: translateX(105vw);
   z-index: 10;
   overflow: auto;
   display: flex;
@@ -134,7 +95,7 @@
 .form-add-input
 {
   width: 100%;
-  margin-right: 5rem;
+  margin-right: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -178,5 +139,16 @@
   width: 100%;
   padding: 1.2rem;
   height: 100%;
+}
+
+/* Responsive */
+
+@media (max-width: 768px)
+{
+  .my-form
+  {
+    width: 100vw;
+    height: 70vh;
+  }
 }
 
