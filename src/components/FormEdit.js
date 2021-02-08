@@ -42,7 +42,7 @@ function FormEdit(props)
 
 
     return(
-    <form className="my-form shadow bg-light" onSubmit={(e) => submitHandling(e)}>
+    <form className="my-form shadow-lg bg-light" onSubmit={(e) => submitHandling(e)}>
           <div className="form-btn back-btn bg-danger" onClick={()=>props.aniClose()}>
             <span>back</span>
           </div>

@@ -1,3 +1,5 @@
+// Made by Nguyen Hieu - Toby
+
 import React,{useState,useEffect} from 'react';
 import {gsap} from 'gsap'                                     //Import animation library 
 import './App.css';                                           //Import custom css
@@ -139,6 +141,9 @@ function App() {
                 })}
               </div>
         </div>
+        <footer className="col-12 text-center mt-5">
+          <p>All Rights Reserved. VSSB 2021.</p>
+        </footer>
       </div>
 
       <FormEdit 
@@ -148,7 +153,7 @@ function App() {
         aniClose = {() => formClose()}
         />
       
-
+      
     </div>
   );
 }
