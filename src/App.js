@@ -4,7 +4,7 @@ import './App.css';
 // import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Contact from './components/Contact';
-
+import FormEdit from './components/FormEdit'
 
 function App() {
 
@@ -79,25 +79,25 @@ function App() {
   }
 
 
-  function settingObject(index)
-  {
-    const object = {
-      id: index,
-      name: inputName,
-      email: inputEmail,
-      phoneNumber: inputPhone
-    }
-    return object
-  }
+  // function settingObject(index)
+  // {
+  //   const object = {
+  //     id: index,
+  //     name: inputName,
+  //     email: inputEmail,
+  //     phoneNumber: inputPhone
+  //   }
+  //   return object
+  // }
 
-  function adding(e)
-  {
-    e.preventDefault()
+  // function adding(e)
+  // {
+  //   e.preventDefault()
 
-    const newContacts = [settingObject(filteredTable.length + 1),...filteredTable]
-    console.log(newContacts)
-    setFilteredTable(newContacts)
-  }
+  //   const newContacts = [settingObject(filteredTable.length + 1),...filteredTable]
+  //   console.log(newContacts)
+  //   setFilteredTable(newContacts)
+  // }
 
   return (
     <div>
@@ -111,8 +111,15 @@ function App() {
       </div>
 
 
+      <FormEdit 
+        table = {filteredTable}
+        setTable = {(e) => setTableContacts(e)}
+        setFilTable = {(e) => setFilteredTable(e)}
+        aniClose = {() => formClose()}
+        />
 
-      <form className="my-form bg-light" onSubmit={(e) => adding(e)}>
+
+      {/* <form className="my-form bg-light" onSubmit={(e) => adding(e)}>
           <div className="form-btn back-btn bg-danger" onClick={()=>formClose()}>
             <span>back</span>
           </div>
@@ -140,7 +147,7 @@ function App() {
           }
         )}
         </div>
-      </form>
+      </form> */}
 
 
       <button type="button" className="btn btn-danger btn-circle btn-xl" onClick={()=>formOpen()}>+</button> 
