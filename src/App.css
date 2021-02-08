@@ -80,3 +80,103 @@
 {
   color: red;
 }
+
+
+/* form */
+.my-form
+{
+  position: fixed;
+  right:0;
+  bottom: 0;
+  width: 40vw;
+  height: 50vh;
+  transform: translateX(45vw);
+  z-index: 10;
+  overflow: auto;
+  display: flex;
+  justify-content:center;
+}
+
+.form-btn
+{
+  background-color: coral;
+  padding: 0 3rem;
+  width: 10%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+}
+
+.back-btn
+{
+  position: fixed;
+  height: 10%;
+  top: 1.5rem;
+  left:1.5rem;
+  margin-bottom: 3rem;
+}
+
+.form-btn span
+{
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.form-add-ctn .form-btn
+{
+  padding: 5rem 3rem;
+  border: none;
+}
+
+
+.form-add-input
+{
+  width: 100%;
+  margin-right: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.my-form input
+{
+  align-self: center;
+}
+
+.form-ctn
+{
+  margin-top: 8rem;
+  width: 75%;
+}
+
+.form-add-ctn
+{
+  display: flex;
+}
+
+.form-add
+{
+  width: 100%;
+  height: 50px;
+}
+
+.form-name-ctn
+{
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.form-del
+{
+  width: 100%;
+}
+
+.form-name
+{
+  width: 100%;
+  padding: 1.2rem;
+  height: 100%;
+}
+

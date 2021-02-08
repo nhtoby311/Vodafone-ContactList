@@ -1,8 +1,10 @@
 import React,{useState,useEffect} from 'react';
+import {gsap} from 'gsap' 
 import './App.css';
 // import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Contact from './components/Contact';
+
 
 function App() {
 
@@ -11,6 +13,10 @@ function App() {
   const [filteredTable,setFilteredTable] = useState([])
   const [query,setQuery] = useState("")
   const [active,setActive] = useState(0)
+
+  const [inputName,setInputName] = useState("")
+  const [inputEmail,setInputEmail] = useState("")
+  const [inputPhone,setInputPhone] = useState("")
   
   const getData = async function() {
     const response = await fetch('./data/data.json')
@@ -56,6 +62,42 @@ function App() {
   }
 
 
+  function formOpen()
+  {
+    gsap.to('.my-form',{
+      transform: 'translateX(0)',
+      duration:0.6
+    })
+  }
+
+  function formClose()
+  {
+    gsap.to('.my-form',{
+      transform: 'translateX(45vw)',
+      duration:0.6
+    })
+  }
+
+
+  function settingObject(index)
+  {
+    const object = {
+      id: index,
+      name: inputName,
+      email: inputEmail,
+      phoneNumber: inputPhone
+    }
+    return object
+  }
+
+  function adding(e)
+  {
+    e.preventDefault()
+
+    const newContacts = [settingObject(filteredTable.length + 1),...filteredTable]
+    console.log(newContacts)
+    setFilteredTable(newContacts)
+  }
 
   return (
     <div>
@@ -68,7 +110,40 @@ function App() {
           </div>
       </div>
 
-      <button type="button" className="btn btn-danger btn-circle btn-xl">+</button> 
+
+
+      <form className="my-form bg-light" onSubmit={(e) => adding(e)}>
+          <div className="form-btn back-btn bg-danger" onClick={()=>formClose()}>
+            <span>back</span>
+          </div>
+        <div className="form-ctn">
+          <div className="form-add-ctn">
+            <div className="form-add-input">
+              <input className="form-add" type="text" placeholder="Name" onChange={(e)=>setInputName(e.target.value)}/>
+              <input className="form-add" type="text" placeholder="Email" onChange={(e)=>setInputEmail(e.target.value)}/>
+              <input className="form-add" type="text" placeholder="Phone" onChange={(e)=>setInputPhone(e.target.value)}/>
+            </div>
+            <button className="form-btn bg-success" type="submit">
+              <span>add</span>
+            </button>
+          </div>
+          {searching(filteredTable).map(function(contact)
+          {
+            return <div key={contact.id} className=" shadow form-name-ctn">
+              <div className="form-name bg-dark">
+                <p  className="my-h1">{contact.name}</p>
+              </div>
+              <div className="form-btn bg-danger">
+                <span>DEL</span>
+              </div>
+              </div>
+          }
+        )}
+        </div>
+      </form>
+
+
+      <button type="button" className="btn btn-danger btn-circle btn-xl" onClick={()=>formOpen()}>+</button> 
 
       <div className="container-fluid padding">
           <div className="text-center">
