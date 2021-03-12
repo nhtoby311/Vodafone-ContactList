@@ -15,3 +15,13 @@ https://vodafonecontact.netlify.app
 
 ![alt text](https://i.imgur.com/uB6yHEz.png)
 
+## Option
+
+Fetch API by changeing the fetch URL 
+
+```bash
+const getData = async function() {                  
+    const response = await fetch('JSON_URL')                  
+    const contacts = await response.json()
+  }
+```
